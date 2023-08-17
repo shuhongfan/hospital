@@ -1,0 +1,70 @@
+<view>
+    <view class="table">
+    <view class="tr">
+      <!-- 顶部时间框遍历处最近7天的日期 -->
+      <view class="td">
+        <!-- navigator点击事件根据科室id和今天的日期判断出的周几进行查询医生 -->
+        <!-- xingqi7指的是今天周几如one，two，three。。。。。。date1为几月几号 -->
+        <navigator id="{{one}}"  url="../doctor/doctor?id={{id}}&deparname={{deparname}}" bindtap="xqi1" data-id="{{id}}" 
+        data-xqi="{{xingqi7}}" data-time="{{date1}}">
+          <view>{{date1}}</view>   
+        </navigator>
+      </view>
+      <view class="td">
+        <navigator id="{{two}}" url="../doctor/doctor?id={{id}}&deparname={{deparname}}" bindtap="xqi2" data-id="{{id}}" 
+        data-xqi="{{xingqi1}}" data-time="{{date2}}">
+          <view>{{date2}}</view>   
+        </navigator>
+      </view>
+      <view class="td">
+        <navigator id="{{three}}" url="../doctor/doctor?id={{id}}&deparname={{deparname}}" bindtap="xqi3" data-id="{{id}}" 
+        data-xqi="{{xingqi2}}" data-time="{{date3}}">
+          <view>{{date3}}</view>   
+        </navigator>
+      </view>
+      <view class="td">
+        <navigator id="{{four}}" url="../doctor/doctor?id={{id}}&deparname={{deparname}}" bindtap="xqi4" data-id="{{id}}" 
+        data-xqi="{{xingqi3}} " data-time="{{date4}}">
+          <view>{{date4}}</view>   
+        </navigator>
+      </view>
+      <view class="td">
+        <navigator id="{{five}}" url="../doctor/doctor?id={{id}}&deparname={{deparname}}" bindtap="xqi5" data-id="{{id}}" 
+        data-xqi="{{xingqi4}}" data-time="{{date5}}">
+          <view>{{date5}}</view>   
+        </navigator>
+      </view>
+      <view class="td">
+        <navigator id="{{six}}" url="../doctor/doctor?id={{id}}&deparname={{deparname}}" bindtap="xqi6" data-id="{{id}}" 
+        data-xqi="{{xingqi5}}" data-time="{{date6}}"> 
+          <view>{{date6}}</view>   
+        </navigator>
+      </view>
+      <view class="td">
+        <navigator id="{{saven}}" url="../doctor/doctor?id={{id}}&deparname={{deparname}}" bindtap="xqi7" data-id="{{id}}" 
+        data-xqi="{{xingqi6}}" data-time="{{date7}}">
+          <view>{{date7}}</view>   
+        </navigator>
+      </view>
+    </view>
+    </view>
+</view>
+
+<view class="page__bd">
+        <view class="weui-grids" >
+            <!-- songqm指的是便利出来的医生详细信息 -->
+            <block wx:for="{{songqm}}" wx:key="*this">
+            <!-- deparid科室id  doctorid医生id typeid医生类型id price价格 time当前几月几号 doctorname医生姓名 deparname科室名称
+            type医生类型 amstarttime上午开始就诊时间 amendtime上午结束就诊时间 -->
+                <navigator url="../userandphone/userandphone?deparid={{id}}&doctorid={{item.doctorId}}&typeid={{item.registeredId}}&price={{item.price}}&time={{time}}&doctorname={{item.doctorName}}&deparname={{deparname}}&type={{item.type}}&amstarttime={{item.amStartTime}}&amendtime={{item.amEndTime}}&pmstarttime={{item.pmStartTime}}&pmendtime={{item.pmEndTime}}" class="weui-grid" hover-class="weui-grid_active">
+                    <view class="doctorxq" style="box-shadow: 3px 3px 6px #93D1FF">
+                      <view><image src="/images/tou.jpg" id="tou"></image></view>
+                      <view>{{item.doctorName}}{{item.type}}</view>
+                      <view id="money">{{item.price}}元</view>
+                      <view id="times">{{time}}</view>
+                    </view>
+                </navigator>
+            </block>
+        </view>
+    </view>
+    

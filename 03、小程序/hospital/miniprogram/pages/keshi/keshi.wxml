@@ -1,0 +1,15 @@
+<view>
+        <view class="weui-cells weui-cells_after-title">
+          <!-- for循环遍历 -->
+          <block wx:for="{{departments}}">
+            <!-- navigator点击事件 -->
+            <!-- 点击跳转查询出这个科室下的所有医生 -->
+            <!-- data-？=“？”点击传参时间 第一个？代表参数名字 第二个代表参数-->
+            <navigator url="../doctor/doctor?id={{item.departmentId}}&deparname={{item.department}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active" bindtap="getdoctor" data-deparid="{{item.departmentId}}" data-deparname="{{item.department}}">
+                <!-- 科室名称 -->
+                <view class="weui-cell__bd">{{item.department}}</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access">></view>
+            </navigator>
+          </block>
+   </view>
+</view>

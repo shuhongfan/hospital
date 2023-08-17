@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/home/home",
+    "pages/login/login",
+    "pages/success/success",
+    "pages/userandphone/userandphone",
+    "pages/keshi/keshi",
+    "pages/doctor/doctor",
+    "pages/error/error",
+    "pages/getreport/getreport",
+    "pages/getyao/getyao",
+    "pages/getchufang/getchufang",
+    "pages/getmoney/getmoney",
+    "pages/loading/loading",
+    "pages/gethome/gethome",
+    "pages/getitem/getitem"
+  ],
+  "window": {
+    "backgroundColor": "#FFFFFF",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#009FCC",
+    "navigationBarTitleText": "服务大厅",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#00BBFF",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "images/souye2.png",
+        "iconPath": "images/souye1.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "images/yonghu2.png",
+        "iconPath": "images/yonghu1.png",
+        "pagePath": "pages/login/login",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

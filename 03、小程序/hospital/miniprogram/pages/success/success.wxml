@@ -1,0 +1,8 @@
+<view class="vimg">
+   <image src="../../images/duihao.png" class="duiimg"></image>
+   
+   <view class="yuyue">预约成功</view>
+
+   <view>{{countDownNum}}秒后跳转到我的页面
+   </view>
+</view>

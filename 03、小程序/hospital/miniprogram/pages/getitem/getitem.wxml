@@ -1,0 +1,39 @@
+<view class="table">
+  <view class="tr bg-w">
+    <view class="th" id="hao">姓名</view>
+    <view class="th" id="times">项目时间</view>
+    <view class="th" id="hao">项目名称</view>
+    <view class="th " id="hao">检查结果</view>
+  </view>
+  <block wx:for="{{item}}" wx:key="{{code}}">
+    <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+      <view class="td">{{item.reportName}}</view>
+      <view class="td">{{item.time}}</view>
+      <view class="td">{{item.durgname}}</view>
+      <view class="td" bindtap="goresult" wx:if="{{item.jie!=null}}">
+       <view bindtap="tapOneDialogButton" data-id="{{item.jie}}">查看</view>
+      </view>
+      <view class="td" bindtap="goresult" wx:else>未检查</view>
+    </view>
+
+
+    <view class="tr" wx:else>
+      <view class="td">{{item.reportName}}</view>
+      <view class="td">{{item.time}}</view>
+      <view class="td">{{item.durgname}}</view>
+      <view class="td" bindtap="goresult" wx:if="{{item.jie!=null}}">
+      <view bindtap="tapOneDialogButton" data-id="{{item.jie}}">查看</view>
+      </view>
+      <view class="td" bindtap="goresult" wx:else>未检查</view>
+    </view>
+  </block>
+</view>
+<!-- ----- -->
+<view class="page">
+    <mp-dialog title="结果" show="{{showOneButtonDialog}}" bindbuttontap="tapDialogButton" buttons="{{oneButton}}">
+        <view>{{sss}}</view>
+    </mp-dialog>
+</view>
+<!-- --- -->
+
+

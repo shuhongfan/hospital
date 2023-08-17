@@ -1,0 +1,31 @@
+<view class="table">
+  <view class="tr bg-w">
+    <view class="th" id="number">就诊号</view>
+    <view class="th" id="hao">姓名</view>
+    <view class="th" id="times">挂号时间</view>
+    <view class="th" id="hao">医生</view>
+    <view class="th " id="hao">科室</view>
+    <view class="th " id="type">类型</view>
+    <view class="th " id="hao">价格</view>
+  </view>
+  <block wx:for="{{report}}" wx:key="{{code}}">
+    <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+      <view class="td" id="number">{{item.reportId}}</view>
+      <view class="td" id="hao">{{item.reportName}}</view>
+      <view class="td" id="times">{{item.time}}</view>
+      <view class="td" id="hao">{{item.doctorName}}</view>
+      <view class="td" id="hao">{{item.department}}</view>
+      <view class="td" id="type">{{item.type}}</view>
+      <view class="td" id="hao">{{item.price}}</view>
+    </view>
+    <view class="tr" wx:else>
+      <view class="td" id="number">{{item.reportId}}</view>
+      <view class="td" id="hao">{{item.reportName}}</view>
+      <view class="td" id="times">{{item.time}}</view>
+      <view class="td" id="hao">{{item.doctorName}}</view>
+      <view class="td" id="hao">{{item.department}}</view>
+      <view class="td" id="type">{{item.type}}</view>
+      <view class="td" id="hao">{{item.price}}</view>
+    </view>
+  </block>
+</view>

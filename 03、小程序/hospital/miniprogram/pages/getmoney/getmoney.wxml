@@ -1,0 +1,28 @@
+<view class="table">
+  <view class="tr bg-w">
+    <view class="th">处方</view>
+    <view class="th">数量</view>
+    <view class="th">单价</view>
+    <view class="th">小计</view>
+  </view>
+  <block wx:for="{{chufang}}" wx:key="{{code}}">
+    <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+      <view class="td">{{item.durgname}}</view>
+      <view class="td">{{item.durgnum}}</view>
+      <view class="td">{{item.repiceprice}}</view>
+      <view class="td">{{item.repicetotal}}</view>
+    </view>
+    <view class="tr" wx:else>
+      <view class="td">{{item.durgname}}</view>
+      <view class="td">{{item.durgnum}}</view>
+      <view class="td">{{item.repiceprice}}</view>
+      <view class="td">{{item.repicetotal}}</view>
+    </view>
+  </block>
+</view>
+<view class="tr">
+      <view class="td"></view>
+      <view class="td"></view>
+      <view class="td"></view>
+      <view class="td" id="sum">总计：{{sum}}</view>
+</view>

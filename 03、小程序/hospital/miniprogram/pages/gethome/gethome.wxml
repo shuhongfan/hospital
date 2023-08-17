@@ -1,0 +1,66 @@
+
+
+
+<view class="table">
+  <view class="tr bg-w">
+    <view class="th" id="name">姓名</view>
+    <view class="th" id="sex">性别</view>
+    <view class="th" id="age">年龄</view>
+    <view class="th" id="carid">身份证号</view>
+  </view>
+  <block wx:for="{{home}}" wx:key="{{code}}">
+    <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+        <view class="td" id="name">{{item.homeName}}</view>
+        <view class="td" id="sex">{{item.sex}}</view>
+        <view class="td" id="age">{{item.age}}</view>
+        <view class="td" id="carid">{{item.carId}}</view>
+    </view>
+    <view class="tr" wx:else>
+        <view class="td" id="name">{{item.homeName}}</view>
+        <view class="td" id="sex">{{item.sex}}</view>
+        <view class="td" id="age">{{item.age}}</view>
+        <view class="td" id="carid">{{item.carId}}</view>
+    </view>
+  </block>
+  <view>
+     <button class="showfrom" bindtap="addshow" id="{{showbutton}}">添加亲属信息</button>
+  </view>
+</view>
+
+<view class="weui-cells weui-cells_after-title" id="{{addhome}}">
+            <view class="weui-cell ">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">姓名</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="请输入您的姓名" bindinput="name"/>
+                </view>
+            </view>
+            <view class="weui-cell  weui-cell_vcode">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">性别</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="请输入男/女" bindinput="sex"/>
+                </view>
+            </view>
+            <view class="weui-cell ">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">年龄</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="请输入你的年龄" bindinput="age"/>
+                </view>
+            </view>
+            <view class="weui-cell ">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">身份证号</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="请输入身份证号" bindinput="carid"/>
+                </view>
+            </view>
+        </view>
+        <view>
+              <button bindtap="addhome" class="showfrom" id="{{addhome}}">添加</button>
+        </view>

@@ -1,0 +1,8 @@
+<view class="vimg">
+   <image src="../../images/cuowu.jpg" class="duiimg"></image>
+   
+   <view class="yuyue">预约失败</view>
+
+   <view>请检查信息是否正确</view>
+   <view>{{countDownNum}}秒后返回上一页</view>
+</view>

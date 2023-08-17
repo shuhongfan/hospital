@@ -1,0 +1,77 @@
+<view>
+  <!-- 顶部轮滑 -->
+  <view>
+    <swiper indicator-dots="true" circular="true">  
+         <block wx:for="{{imgUrls}}">  
+           <swiper-item class="imagesuto">
+               <image src="{{item.url}}" class="slide-image"/>  
+           </swiper-item>  
+         </block>
+    </swiper>
+  </view>
+
+  <!-- 医院简介and公告 -->
+  <view class="ggandjj">
+      <!-- 公告 -->
+      <view class="gonggao">
+      <view class="img">
+        <image class="ggimg" src="{{ggimg}}"></image>
+      </view>
+      <swiper vertical="true" autoplay="true" interval="2000" class="ggtext">
+         <block wx:for="{{gonggaourls}}">  
+           <swiper-item class="imagesuto">
+               {{item.wen}}
+           </swiper-item>  
+         </block>
+    </swiper>
+    </view>
+  <!-- 简介 -->
+    <view class="jian">
+         <view class="jianjie">
+            <image src="{{jianjie}}" class="img" bindtap="toloading"></image>
+         </view>
+         <view class="jiuyi">
+            <image src="{{jiuyi}}" class="znimg" bindtap="toloading"></image>
+         </view>
+         <view class="daohang">
+            <image src="{{daohang}}" class="img" bindtap="toloading"></image>
+         </view>
+         <view class="zhiyin">
+            <image src="{{zhiyin}}" class="img" bindtap="toloading"></image>
+         </view>
+    </view>
+  </view>
+
+  <!-- 功能 -->
+  <view class="table">
+    <view class="tr bg-w" id="fuwu">
+       <view class="th"><image src="{{zlfw}}" class="zlfwimg"></image></view>
+    </view>
+    <view class="tr" id="fwimg1">
+      <view class="td"><image src="{{zn}}" class="gnimg" bindtap="toloading"></image></view>
+      <view class="td"><image src="{{yg}}" class="gnimg" bindtap="tokeshi"></image></view>
+      <view class="td"><image src="{{dg}}" class="gnimg" bindtap="toloading"></image></view>
+      <view class="td"><image src="{{cz}}" class="gnimg" bindtap="toloading"></image></view>
+    </view>
+    <view class="tr" id="fwimg2">
+      <view class="td"><image src="{{mzfy}}" class="gnimg" bindtap="toloading"></image></view>
+      <view class="td"><image src="{{mzjf}}" class="gnimg" bindtap="toloading"></image></view>
+      <view class="td"><image src="{{zyfy}}" class="gnimg" bindtap="toloading"></image></view>
+      <view class="td"><image src="{{zn}}" class="gnimg" bindtap="toloading"></image></view>
+    </view>
+  </view>
+
+  <view class="table">
+    <view class="tr bg-w" id="shfw">
+       <view class="th" bindtap="toloading"><image src="{{shfw}}" class="shfwimg"></image></view>
+    </view>
+    <view class="tr" id="shimg1">
+      <view class="td" bindtap="toloading"><image src="{{w1}}" class="w1"></image></view>
+      <view class="td"><image src="{{w2}}" class="w2"></image></view>
+    </view>
+    <view class="tr" id="shimg2">
+      <view class="td" bindtap="toloading"><image src="{{w3}}" class="w3"></image></view>
+      <view class="td" bindtap="toloading"><image src="{{w4}}" class="w4"></image></view>
+    </view>
+  </view>
+</view>

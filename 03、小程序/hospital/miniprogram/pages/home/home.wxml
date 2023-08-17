@@ -1,0 +1,55 @@
+<view class="page">
+
+    <view class="page__bd">
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+                    <image src="" style="width: 50px; height: 50px; display: block" wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"/>
+                    <block wx:else>
+                      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+                    </block>
+                </view>
+                <view class="weui-cell__bd">
+                    <view>{{userInfo.nickName}}</view>
+                    <view style="font-size: 13px;color: #888888;">{{phonenum}}</view>
+                </view>
+            </view>
+            
+            <view class="weui-cell weui-cell_access">
+                <view class="weui-cell__bd">
+                    <navigator url="">  
+                    <view style="display: inline-block; vertical-align: middle">我的处方</view>
+                    </navigator>
+                </view>
+                <view class="weui-cell__ft weui-cell__ft_in-access">></view>
+            </view>
+            
+            <view class="weui-cell weui-cell_access">
+                <view class="weui-cell__bd">
+                    <navigator url="">
+                    <view style="display: inline-block; vertical-align: middle">我的药</view>
+                    </navigator>
+                </view>
+                <view class="weui-cell__ft weui-cell__ft_in-access">></view>
+            </view>
+            
+            <view class="weui-cell weui-cell_access">
+                <view class="weui-cell__bd">
+                    <navigator url="../getreport/getreport?phonenum={{phonenum}}">
+                    <view style="display: inline-block; vertical-align: middle">挂号记录</view>
+                    </navigator>
+                </view>
+                <view class="weui-cell__ft weui-cell__ft_in-access">></view>
+            </view>
+            
+            <view class="weui-cell weui-cell_access">
+                <view class="weui-cell__bd">
+                    <navigator url="../getreport/getreport?phonenum={{phonenum}}">
+                    <view style="display: inline-block; vertical-align: middle">费用明细</view>
+                    </navigator>
+                </view>
+                <view class="weui-cell__ft weui-cell__ft_in-access">></view>
+            </view>
+        </view>
+    </view>
+</view>
